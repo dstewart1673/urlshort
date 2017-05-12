@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
     }
   });
 });
-app.use('/new', newe);
+app.use('/new/', newe);
 app.get('/:id', (req, res) => {
   const short = parseInt(req.params.id);
   if (isNaN(short)) {
