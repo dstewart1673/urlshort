@@ -32,7 +32,7 @@ app.get('/:id', (req, res) => {
       docs.findOne({short: short}, {url: 1}, (err, obj) => {
         if (err) throw err;
         console.log("http://" + obj.url);
-        res.redirect(obj.url);
+        res.redirect("http://" + obj.url);
         db.close();
       });
     });
