@@ -31,7 +31,7 @@ app.get('/:id', (req, res) => {
       console.log(short);
       docs.findOne({short: short}, {url: 1}, (err, obj) => {
         if (err) throw err;
-        console.log(obj);
+        console.log(obj.url);
         res.redirect(obj.url);
         db.close();
       });
