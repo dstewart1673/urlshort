@@ -28,10 +28,8 @@ app.get('/:id', (req, res) => {
     mongodb.connect(url, (err, db) => {
       if (err) throw err;
       const docs = db.collection('urls');
-      console.log(short);
       docs.findOne({short: short}, {url: 1}, (err, obj) => {
         if (err) throw err;
-        console.log("http://" + obj.url);
         res.redirect("http://" + obj.url);
         db.close();
       });
