@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongodb = require('mongodb');
 const MongoClient = mongodb.MongoClient;
-const url = 'mongodb://base:1234@ds113841.mlab.com:13841/short-url';
+const url = process.env.MONGOLAB_URI;
 
 router.get('/:path', (req, res) => {
   mongodb.connect(url, (err, db) => {
