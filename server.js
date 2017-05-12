@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const port = 8080;
 const MongoClient = mongodb.MongoClient;
-const url = 'mongodb://base:1234@ds113841.mlab.com:13841/short-url';
+const url = process.env.MONGOLAB_URI;
 const app = express();
 const newe = require('./new');
 
